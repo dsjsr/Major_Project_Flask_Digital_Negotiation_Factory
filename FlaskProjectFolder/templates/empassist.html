@@ -1,0 +1,20 @@
+{% extends "base2emp.html" %}
+
+{% block content2 %}
+
+{% if prn %}
+<h1>Market analysis for PR number {{prn}}</h1>
+<p>Players involved: {{vendors_involved}}</p>
+{% else %}
+<h1>Enter PR number for analysis info</h1>
+{% endif %}
+
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.prn.label }} {{ form.prn() }}
+    {{ form.submit() }}
+</form>
+
+<div id="pieChart"></div>
+
+{% endblock %}

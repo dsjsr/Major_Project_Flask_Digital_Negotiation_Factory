@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <a class="navbar-brand" href="{{ url_for('index') }}">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <a class="navbar-brand" href="{{ url_for('adminpanel') }}">Admin</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+</nav>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Digital Negotiation Factory</h1>
+      <p class="lead">Kindly select your role to access facilities.</p>
+      <hr>
+      <p class="lead">Vendors have access to template scorecards/feedbacks.</p>
+      <hr>
+      <p class="lead">Employees can get info on market dynamics and auto indication of best choices for bidding price range as well vendors for a given product class (PR number).</p>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+
+    </div>
+    <h3>Kindly Select Your Role</h3>
+    <br>
+    <form action="{{ url_for('empsignin') }}">
+      <button type="submit" class="btn btn-primary">Employee</button>
+    </form>
+    <br>
+    <form action="{{ url_for('vendorsignin') }}">
+        <button type="submit" class="btn btn-primary">Vendor</button>
+    </form>
+    <hr>
+
+</div> <!-- /container -->
+{% endblock %}
